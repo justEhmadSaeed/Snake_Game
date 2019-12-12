@@ -80,12 +80,12 @@ int main() {
 
                 printf("Press any key to return to the main menu...\n");
                 while(true)
-                    if (kbhit())
+                    if (_kbhit())
                         break;
 
                 // call getch() to "clear" the buffer
                 // ("delete" the key that was pressed)
-                getch();
+                _getch();
 
                 break;
 
@@ -97,12 +97,12 @@ int main() {
 
                 printf("\t Press any key to return to the main menu...");
                 while(true)
-                    if (kbhit())
+                    if (_kbhit())
                         break;
 
                 // call getch() to "clear" the buffer
                 // ("delete" the key that was pressed)
-                getch();
+                _getch();
 
                 break;
 

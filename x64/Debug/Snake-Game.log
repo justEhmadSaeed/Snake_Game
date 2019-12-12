@@ -1,0 +1,10 @@
+﻿  Game.cpp
+  Input.cpp
+  Snake.cpp
+C:\Users\Ehmad\source\repos\Snake-Game\source-code\Snake.cpp(22,15): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Ehmad\source\repos\Snake-Game\source-code\Snake.cpp(106,23): warning C4018:  '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\Ehmad\source\repos\Snake-Game\source-code\Snake.cpp(115,15): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Ehmad\source\repos\Snake-Game\source-code\Snake.cpp(142): warning C4715:  'Snake::newXCoord': not all control paths return a value
+C:\Users\Ehmad\source\repos\Snake-Game\source-code\Snake.cpp(151): warning C4715:  'Snake::newYCoord': not all control paths return a value
+  Snake-Game.vcxproj -> C:\Users\Ehmad\source\repos\Snake-Game\x64\Debug\Snake-Game.exe
