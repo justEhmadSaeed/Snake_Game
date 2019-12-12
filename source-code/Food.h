@@ -13,33 +13,35 @@ class Food {
 private:
 
     /**
-	 * Reference to the current board.
+	  Reference to the current board.
 	 */
 	Board& board;
 
     /**
-     * The coordinates of the current food item.
+      The coordinates of the current food item.
      */
     unsigned int x, y;
 
 public:
 
     /**
-     * The constructor initializes the board.
+      The constructor initializes the board.
      */
     Food(Board&);
 
     /**
-     * Checks whether the current food item
-     * has been eaten by the snake.
-     * @return True  - the item's been eaten
-     *         False - the item hasn't been eaten
+       Checks whether the current food item
+       has been eaten by the snake.
+       return True
+       		- the item's been eaten
+              False
+	       	- the item hasn't been eaten
      */
     bool isEaten();
 
     /**
-     * Generates a food item at a random position
-     * on the board.
+       Generates a food item at a random position
+       on the board.
      */
     void generateFood();
 
