@@ -8,8 +8,9 @@
 #include <stdlib.h> // srand(), rand()
 #include <time.h>   // time()
 
+// constructor 
 Food::Food(Board& newBoard): board(newBoard) {  }
-
+// function to check if food is eaten
 bool Food::isEaten() {
 
     // the value of a food item on the board is 2
@@ -18,7 +19,7 @@ bool Food::isEaten() {
     return true;
 
 }
-
+// function generates random food
 void Food::generateFood() {
 
     srand(time(NULL));
@@ -31,14 +32,14 @@ void Food::generateFood() {
     // board[tempX][tempY] = 0; is a free position
     do {
 
-        tempX = rand() % MAX_LINES;
-        tempY = rand() % MAX_COLUMNS;
+        tempX = rand() % MAX_LINES;     // generating random varable
+        tempY = rand() % MAX_COLUMNS;   // generating random varable
 
     }
     while (board.getXY(tempX, tempY));
 
     // Create a food item there
-    board.setXY(tempX, tempY, 2);
+    board.setXY(tempX, tempY, 2);   // calling set function to creat food
 
     // Update the coordinates of the current food item
     x = tempX;
