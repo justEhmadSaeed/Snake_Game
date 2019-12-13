@@ -1,30 +1,28 @@
-/**----------------------------------------------------------------
- *  Snake
- *  It describes the snake's characteristics and actions.
- *----------------------------------------------------------------*/
+/*
+Snake Class
+It describes the snake's characteristics and actions.
+*/
 
 #include "Snake.h"
-#include <stdio.h>  // NULL
-#include <stdlib.h> // srand(), rand()
-#include <time.h>   // time()
+#include <stdio.h>  // For NULL
 
 Snake::Snake(Board& newBoard): board(newBoard) {
 
-    lives  = 1;
+    lives  = 3;
     length = 1;
     score  = 0;
-    direction = 'H'; // the initial direction is UP
+    direction = 'W'; // the initial direction is UP
 
     // The snake's initial position will be randomly
     // generated around the middle of the board.
     int tempX, tempY;
 
-    srand(time(NULL));
-    tempX = MAX_LINES / 2 + rand() % 4;
-    tempY = MAX_COLUMNS / 2 + rand() % 4;
+	tempX = MAX_COLUMNS / 2;
+	tempY = MAX_LINES / 2;
 
-    coord[0][0] = tempX;
-    coord[0][1] = tempY;
+	// coord[0] is the head
+    coord[0][0] = tempX; // X coordinate of the head
+    coord[0][1] = tempY; // Y coordinate of the head
 
 }
 
@@ -91,12 +89,20 @@ void Snake::move() {
 
 void Snake::changeDirection(char newDirection) {
 
-    // if it's a valid direction
-    if (newDirection == 'H'
-        || newDirection == 'P'
-        || newDirection == 'K'
-        || newDirection == 'M')
-            direction = newDirection;
+	switch (newDirection) {
+	case 'H':
+		direction = 'W';
+		break;
+	case 'P':
+		direction = 'S';
+		break;
+	case 'K':
+		direction = 'A';
+		break;
+	case 'M':
+		direction = 'D';
+		break;
+	}
 
 }
 
@@ -110,16 +116,11 @@ void Snake::reset() {
 
     // The snake's head will appear at a random
     // location around the middle of the board.
-    int tempX, tempY;
 
-    srand(time(NULL));
-    tempX = MAX_LINES / 2 + rand() % 4;
-    tempY = MAX_COLUMNS / 2 + rand() % 4;
+    coord[0][0] = MAX_LINES / 2;
+    coord[0][1] = MAX_COLUMNS / 2;
 
-    coord[0][0] = tempX;
-    coord[0][1] = tempY;
-
-    direction = 'H';
+    direction = 'W';
 
 }
 
@@ -134,24 +135,36 @@ bool Snake::loseLife() {
 
 int Snake::newXCoord() {
 
-    if (direction == 'H') return coord[0][0] - 1;
-    else if (direction == 'P') return coord[0][0] + 1;
-         else if (direction == 'K') return coord[0][0];
-              else if (direction == 'M') return coord[0][0];
+	switch (direction) {
+	case 'W':
+		return coord[0][0] - 1;
+	case 'S':
+		return coord[0][0] + 1;
+	case 'A':
+		return coord[0][0];
+	case 'D':
+		return coord[0][0];
+	}
 
 }
 
 int Snake::newYCoord() {
 
-    if (direction == 'H') return coord[0][1];
-    else if (direction == 'P') return coord[0][1];
-         else if (direction == 'K') return coord[0][1] - 1;
-              else if (direction == 'M') return coord[0][1] + 1;
+	switch (direction) {
+	case 'W':
+		return coord[0][1];
+	case 'S':
+		return coord[0][1];
+	case 'A':
+		return coord[0][1] - 1;
+	case 'D':
+		return coord[0][1] + 1;
+	}
 
 }
 
-unsigned int Snake::getLives()  { return lives; }
+int Snake::getLives()  { return lives; }
 
-unsigned int Snake::getLength() { return length; }
+int Snake::getLength() { return length; }
 
-unsigned int Snake::getScore()  { return score; }
+int Snake::getScore()  { return score; }

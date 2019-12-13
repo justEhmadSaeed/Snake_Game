@@ -3,9 +3,6 @@
  *  It describes a food item.
  *----------------------------------------------------------------*/
 
-#ifndef FOOD_H_INCLUDED
-#define FOOD_H_INCLUDED
-
 #include "Board.h"
 
 class Food {
@@ -45,4 +42,3 @@ public:
 
 };
 
-#endif // FOOD_H_INCLUDED

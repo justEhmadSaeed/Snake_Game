@@ -3,9 +3,6 @@
  *  It describes the snake's characteristics and actions.
  *----------------------------------------------------------------*/
 
-#ifndef SNAKE_H_INCLUDED
-#define SNAKE_H_INCLUDED
-
 #include "Board.h"
 
 /// The maximum size of the snake - number of "segments".
@@ -110,20 +107,19 @@ public:
      * Returns the number of lives.
      * @return the number of lives
      */
-	unsigned int getLives();
+	int getLives();
 
     /**
      * Returns the length of the snake.
      * @return the length of the snake
      */
-	unsigned int getLength();
+	int getLength();
 
     /**
      * Returns the player's score.
      * @return the player's score
      */
-	unsigned int getScore();
+	int getScore();
 
 };
 
-#endif // SNAKE_H_INCLUDED
