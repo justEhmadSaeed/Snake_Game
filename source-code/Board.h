@@ -7,7 +7,7 @@
 #ifndef BOARD_H_INCLUDED
 #define BOARD_H_INCLUDED
 
-/// The board's maximum widht and height.
+/// The board's maximum height and widht.
 const unsigned int MAX_LINES   = 15;
 const unsigned int MAX_COLUMNS = 15;
 
@@ -17,9 +17,9 @@ private:
 	/**
 	 * The actual board - a 2D matrix.
 	 * Its elements can have one of the following values:
-	 *		- 0 -> if the cell is empty
-	 *		- 1 -> if the cell is a snake segment
-	 *		- 2 -> if the cell is a food item
+	 		- 0 -> if the cell is empty
+	 		- 1 -> if the cell is a snake segment
+	 		- 2 -> if the cell is a food item
 	 */
 	unsigned int board[MAX_LINES][MAX_COLUMNS];
 
@@ -32,27 +32,27 @@ public:
 
 	/**
 	 * Returns the element with the X and Y coordinates.
-	 * @param the X coordinate
-	 * @param the Y coordinate
-	 * @return the element's value - if it's a valid position
-	 *         -1                  - otherwise
+	   param1 the X coordinate
+	   param2 the Y coordinate
+	 * return the element's value - if it's a valid position
+	          -1                  - otherwise
 	 */
 	int getXY(int, int);
 
 	/**
 	 * Sets the value of the element with the X and Y coordinates.
-	 * @param the X coordinate
-	 * @param the Y coordinate
-	 * @param the new value of the element
+	   param1 the X coordinate
+	   param2 the Y coordinate
+	   param3 the new value of the element
 	 */
 	void setXY(int, int, unsigned int);
 
 	/**
 	 * Check whether X and Y represent valid coordinates.
-	 * @param the X coordinate
-	 * @param the Y coordinate
-	 * @return TRUE  - if it's a valid position
-	 *         FALSE - otherwise
+	   param1 the X coordinate
+	   param2 the Y coordinate
+	 * return TRUE  - if it's a valid position
+	          FALSE - otherwise
 	 */
 	bool isValidXY(int, int);
 
