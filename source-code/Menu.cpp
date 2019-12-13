@@ -1,4 +1,4 @@
-/**----------------------------------------------------------------
+/*----------------------------------------------------------------
  *  Snake
  *  It is used to represent the main menu of the game.
  *----------------------------------------------------------------*/
@@ -37,10 +37,7 @@
 
      displayOptions();
 
-     printf("\n\n");
-
-     displayCopyright();
-
+	 printf("\n\n");
  }
 
  void Menu::displayTitle() {
@@ -55,7 +52,7 @@
 
  void Menu::displayOptions() {
 
-     for (unsigned int i = 0; i < nrOfOptions; i++) {
+     for (int i = 0; i < nrOfOptions; i++) {
         printf("\t\t     ");
         if (options[i].selected)
             printf("> ");
@@ -64,12 +61,6 @@
         printf(options[i].name);
         printf("\n\n");
      }
-
- }
-
- void Menu::displayCopyright() {
-
-     printf("\t     Copyright (C) 2014  PODARIU Ovidiu");
 
  }
 
@@ -96,7 +87,7 @@
 
  }
 
- void Menu::displayCounter(unsigned int sec) {
+ void Menu::displayCounter(int sec) {
 
      clearScreen();
 
@@ -137,6 +128,10 @@
 
  }
 
- unsigned int Menu::getCurrentOption() { return currentOption; }
+ int Menu::getCurrentOption() { 
+	 return currentOption; 
+ }
 
- char Menu::getLastCommand() { return lastCommand; }
+ char Menu::getLastCommand() { 
+	 return lastCommand; 
+ }

@@ -1,4 +1,4 @@
-/**----------------------------------------------------------------
+/*----------------------------------------------------------------
  *  Snake
  *  Its purpose is to print messages to standard output
  *  and to draw the board.
@@ -40,7 +40,7 @@
 
  }
 
- void Output::showResults(unsigned int score) {
+ void Output::showResults(int score) {
 
     clearScreen();
 

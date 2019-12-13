@@ -3,9 +3,6 @@
  *  It is used to get the user's input.
  *----------------------------------------------------------------*/
 
-#ifndef INPUT_H_INCLUDED
-#define INPUT_H_INCLUDED
-
 class Input {
 
 public:
@@ -23,4 +20,3 @@ public:
 
 };
 
-#endif // INPUT_H_INCLUDED
